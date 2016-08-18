@@ -1,0 +1,126 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!--<title>微展示</title>-->
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="__AUI__/i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="UCToo"/>
+  <link rel="apple-touch-icon-precomposed" href="__AUI__/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="__AUI__/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+
+  <link rel="stylesheet" href="__AUI__/css/amazeui.min.css">
+  <link rel="stylesheet" href="__AUI__/css/app.css">
+  <link rel="stylesheet" href="__CSS__/style.css">
+  
+  <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__AUI__/js/polyfill/rem.min.js"></script>
+<script src="__AUI__/js/polyfill/respond.min.js"></script>
+<script src="__AUI__/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__AUI__/js/jquery.min.js"></script>
+<script src="__AUI__/js/amazeui.min.js"></script>
+<!--<![endif]-->
+
+
+</head>
+
+<body  class="content">
+<header>
+    <div class="head-box">
+        <img class="head-pic" src="__IMG__/i{$issue_id}.png"/>
+        <img id="head-star" src="__IMG__/right.png"/>
+        <img id="head-five-star" src="__IMG__/star.png"/>
+    </div>
+</header>
+
+
+    <volist name="list" id="lo">
+	    <neq name="lo['pid']" value="0">
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+  <!--列表标题-->
+  <div class="am-list-news-hd am-cf">
+    <!--带更多链接-->
+    <a href="###" class="">
+      <h2>{$lo.title}</h2>
+    </a>
+  </div>
+
+        
+		<ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
+  am-avg-md-3 am-avg-lg-4 am-gallery-overlay">
+        <php>$num = 0 </php>
+		<volist name="contents" id="vo">
+        
+		    <eq name="vo['issue_id']" value="$lo['id']">
+         <php>$num += 1;
+		     if($num < 7 ){
+		 </php>
+            <li>
+            <div class="am-gallery-item">
+          
+            
+			
+			<if condition="filter_var($vo['url'], FILTER_VALIDATE_URL) "> 
+<a href="{$vo['url']}" class="">
+<else /> 
+<a href="{:U('Issue/Index/contentDetail',array('id'=>$vo['id']))}" class="">
+</if>
+            <img src="{$vo.cover_id|getThumbImageById=280,210}" alt="{$vo.title}" />
+            <h3 class="am-gallery-title">{$vo.title}</h3>
+			</a>
+			
+			
+			</div>
+          </li>
+		<php>	}   </php>
+		 
+			</eq>
+        </volist>
+        
+       </ul>
+	    <!--更多在底部-->
+  <div class="am-list-news-ft">
+    <a class="am-list-news-more am-btn am-btn-default " href="{:U('indexa',array('issue_id'=>$lo['id']))}">查看更多 &raquo;</a>
+  </div>
+</div>
+        </neq>
+        
+    </volist>
+
+
+
+</body>
+</html>
+

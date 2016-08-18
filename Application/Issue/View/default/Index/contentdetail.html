@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge,chrome=1">   <!--优先谷歌内核，最新ie-->
+    <meta name="format-detection" content="telephone=no,email=no,address=no">     <!--不识别电话邮箱地址-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">    <!--不转码-->
+    <!-- Mobile Devices Support @begin 使手机上比例正常-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!--文档宽度与设备宽度1：1 不允许缩放 -->
+    <!-- apple devices -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/> <!-- wabapp程序支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="white"/><!-- 顶端状态条 -->
+    <meta name="apple-touch-fullscreen" content="yes"><!--全屏显示 -->
+    <!-- Mobile Devices Support @end -->
+	  <link rel="stylesheet" href="__AUI__/css/amazeui.min.css">
+  <link rel="stylesheet" href="__AUI__/css/app.css">
+    <link rel="stylesheet" href="__CSS__/style1.css">
+	
+	  <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__AUI__/js/polyfill/rem.min.js"></script>
+<script src="__AUI__/js/polyfill/respond.min.js"></script>
+<script src="__AUI__/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__AUI__/js/jquery.min.js"></script>
+<script src="__AUI__/js/amazeui.js"></script>
+<!--<![endif]-->
+
+</head>
+<body class="content">
+
+    <div class="head">
+        <img src="{$content.cover_id|getThumbImageById}"/>
+        <p>{$content.title}</p>
+		<if condition="($content['uid'] eq is_login()) OR check_auth('editIssueContent')">
+
+                            <a class="btn btn-primary " href="{:U('edit',array('id'=>$content['id']))}" ><i class="glyphicon glyphicon-pencil"></i>&nbsp;编辑</a>
+                        </if>
+    </div>
+	
+    <div class="about-box">
+        <p class="box-head">公司简介</p>
+        <div class="about-body">
+            <span>
+                {$pra[0]}
+
+
+            </span>
+        </div>
+    </div>
+    <div class="about-box">
+        <p class="box-head">产品与风采</p>
+        <div class="about-body">
+            <span>
+                                {$pra[1]}
+            </span>
+        </div>
+    </div>
+    <div class="about-box">
+        <p class="box-head">联系方式</p>
+        <div class="about-body">
+            <span>
+                          {$pra[2]}  
+            </span>
+        </div>
+    </div>
+	
+<!-- Navbar -->
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+     id="">
+  <ul class="am-navbar-nav am-cf am-avg-sm-4">
+    
+    <li data-am-navbar-qrcode>
+      <a href="###">
+        <span class="am-icon-qrcode"></span>
+        <span class="am-navbar-label">二维码</span>
+      </a>
+    </li>
+   
+  </ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

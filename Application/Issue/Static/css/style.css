@@ -1,0 +1,50 @@
+*{  margin: 0;  padding: 0;  }
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑 Regular","微软雅黑";
+    position: relative;
+}
+
+.content{
+    background-image:url(../images/H57.png);
+    background-repeat: repeat;
+    margin-bottom: 120px;
+}
+header{
+    margin: 60px auto;
+    text-align: center;
+    overflow: hidden;
+}
+.head-box{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+.head-pic{
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+#head-star{
+    position: absolute;
+    right: -11em;
+    top: -5em;
+    z-index: 5;
+    width: 13em;
+}
+#head2-star{
+    position: absolute;
+    right: -55px;
+    top: -30px;
+    z-index: 5;
+    width: 50%;
+}
+#head-five-star{
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 6%;
+    z-index: 5;
+}

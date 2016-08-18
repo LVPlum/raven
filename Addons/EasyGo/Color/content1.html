@@ -1,0 +1,18 @@
+<script type="text/javascript" src="__ADDONROOT__/static/Color/jquery.js"></script> 
+<script type="text/javascript">
+	var jQuery_1_4_2 = $.noConflict(true);
+</script>
+<script type="text/javascript" src="__ADDONROOT__/static/Color/jquery.colorpicker.js"></script>  
+<script type="text/javascript">
+	var id = "{$param['1']}";
+	jQuery_1_4_2(function(){
+		jQuery_1_4_2("#"+id).colorpicker({
+            fillcolor:true,
+			event    :"{$config['Color1_Event']}" ? "{$config['Color1_Event']}" : "click",
+        });
+	})
+</script>
+
+
+
+

@@ -1,0 +1,48 @@
+<extend name="Public/base"/>
+<block name="body">
+ 预约来访：
+<div class="data-table with-padding">
+        <table class="table table-bordered table-striped ">
+            <thead>
+            <tr>
+                
+                <th class="">ID</th>
+                <th class="">姓名</th>
+                <th class="">电话</th>
+                <th class="">联系方式</th>
+                <th class="">留言</th>
+                <th class="">留言时间</th>
+                <th class="">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <notempty name="data">
+                <volist name="data" id="vo">
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.user_name}</td>
+                        <td>{$vo.telephone}</td>
+                        <td>{$vo.contact_way}</td>
+                        <td>{$vo.messages}</td>
+                        <td><?php
+                        	echo date("Y-m-d H:i:s",$vo['create_time']);
+                         ?>
+                        
+                        </td>
+                        <td>
+                            <a href="{:U('User/delVistBooking?id='.$vo['id'])}"
+                               class="confirm ajax-get">删除</a>
+                        </td>
+
+                    </tr>
+                </volist>
+                <else/>
+                <td colspan="9" class="text-center"> aOh! 暂时还没有内容!</td>
+            </notempty>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        {$page}
+    </div>
+</block>wdkk

@@ -1,0 +1,16 @@
+<script src="__ADDONROOT__/static/Date/jquery.LWJDatePicker.min.js" type="text/javascript"></script>
+<link type="text/css" rel="Stylesheet" href="__ADDONROOT__/static/Date/LWJDatePicker.css" />
+<script type="text/javascript">
+$(function () {
+	var id = "{$param['1']}";
+	$("#"+id).LWJDate({
+		Style             : "{$config['Date1_color']}" ? "{$config['Date1_color']}" : "red",
+		Event             : "{$config['Date1_Event']}" ? "{$config['Date1_Event']}" : "click",
+		DateFormat        : "{$config['Date1_DateFormat']}" ? "{$config['Date1_DateFormat']}" : "yyyy-MM-dd",
+		Left              : {$config['Date1_Left']} ? {$config['Date1_Left']} : 0,
+		Top               : {$config['Date1_Top']} ? {$config['Date1_Top']} : 8,
+		IsNeedClickOk     : "{$config['IsNeedClickOk']}" ? "{$config['IsNeedClickOk']}" : "false",
+		Animate           : "{$config['Animate']}" ? "{$config['Animate']}" : "0"
+	});
+});	
+</script>

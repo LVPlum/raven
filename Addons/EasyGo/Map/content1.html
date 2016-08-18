@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="__ADDONROOT__/static/cymain.css" />
+<script src="__ADDONROOT__/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__ADDONROOT__/static/artDialog/plugins/iframeTools.js"></script>
+<script>
+	var mapPoint = jQuery.parseJSON($('#map').val());
+	if (mapPoint) {
+		document.getElementById('longitude').value = mapPoint.longitude;// 拆分数据库字段存储的值
+		document.getElementById('latitude').value = mapPoint.latitude;
+	};
+function setlatlng(longitude,latitude,map){
+	art.dialog.data('longitude', longitude);
+	art.dialog.data('latitude', latitude);
+	art.dialog.data('mapPoint', map);
+	// 此时 iframeA.html 页面可以使用 art.dialog.data('test') 获取到数据，如：
+	// document.getElementById('aInput').value = art.dialog.data('test');
+	art.dialog.open('__ROOT__/Addons/EasyGo/Map/setLatLng.html',{
+		lock:false,
+		title:'设置经纬度',
+		width:600,
+		height:400,
+		yesText:'关闭',
+		background: '#000',
+		opacity: 0.87
+	});
+}
+</script>
+<a href="###" style="{$config['map1_style']}" onclick="setlatlng($('#longitude').val(),$('#latitude').val(),$('#map').val())">
+<if condition="$config['map1_show']">
+{$config['map1_show']}
+<else/>
+去地图中选择1
+</if>
+</a>
+
+

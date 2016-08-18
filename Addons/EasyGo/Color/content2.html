@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="__ADDONROOT__/static/Color/css/colorpicker.css" type="text/css" />
+<script type="text/javascript" src="__ADDONROOT__/static/Color/js/colorpicker.js"></script>
+<script type="text/javascript">
+$(function(){
+	var id = "{$param['1']}";
+	$("#"+id).ColorPicker({
+		onSubmit: function(hsb, hex, rgb, el) {
+			$(el).val(hex);
+			$(el).ColorPickerHide();
+		},
+		onBeforeShow: function () {
+			$(this).ColorPickerSetColor(this.value);
+		}
+	})
+	.bind('keyup', function(){
+		$(this).ColorPickerSetColor(this.value);
+	});
+});
+</script>
+
+
+
