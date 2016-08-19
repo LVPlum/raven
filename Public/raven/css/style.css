@@ -47,7 +47,7 @@ li{
  THEME SWITCHER DEMO
 -------------------------------------------------*/
 body{
-font-family:'Î¢ÈíÑÅºÚ';
+font-family:'Î¢ï¿½ï¿½ï¿½Åºï¿½';
 }
 
 /*-------------------------------------------------------*/
@@ -5173,7 +5173,7 @@ textarea:focus{
   margin-top:-122px;
   z-index:9999;
 }
-body{ font-family:'Î¢ÈíÑÅºÚ';}
+body{ font-family:'Î¢ï¿½ï¿½ï¿½Åºï¿½';}
 
 .appoint_title{
   width:100%;
@@ -5218,7 +5218,7 @@ body{ font-family:'Î¢ÈíÑÅºÚ';}
   left:0;
   top:0;
   z-index:9;
-  color:#FFF;
+  color:#000;
 }
 .need{
   color:red;
@@ -5281,7 +5281,7 @@ form{
   opacity:0.5;*/
   color:#ED7D31;
   font-size:41px;
-  font-family:'Î¢ÈíÑÅºÚ';
+  font-family:'Î¢ï¿½ï¿½ï¿½Åºï¿½';
 }
 
 #sliderWrap .title2{
